@@ -1,4 +1,4 @@
-
+﻿
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
@@ -277,7 +277,7 @@ export default function Home() {
 
   const preview = useMemo(() =>
     chapterText.split(/\r?\n/)
-      .map(line => line.replace(/^\s*(?:[-*•]|\d+[.)])\s*/, "").trim())
+      .map(line => line.replace(/^\s*(?:[-*â€¢]|\d+[.)])\s*/, "").trim())
       .filter(Boolean),
     [chapterText]
   );
@@ -339,7 +339,7 @@ export default function Home() {
 
   const bestDay = weekActivity.reduce(
     (best, day) => day.count > best.count ? day : best,
-    { key: "", label: "—", count: 0 }
+    { key: "", label: "â€”", count: 0 }
   );
 
   const filteredSubjects = subjects.filter(s =>
@@ -624,7 +624,7 @@ export default function Home() {
             }}>
               {syncStatus === "loading" ? "CONNECTING..." :
                syncStatus === "saving" ? "SAVING..." :
-               syncStatus === "synced" ? "☁ CLOUD SYNCED" :
+               syncStatus === "synced" ? "â˜ CLOUD SYNCED" :
                "SYNC ERROR"}
             </span>
           </div>
@@ -635,11 +635,9 @@ export default function Home() {
             <div className="analytics-hero">
               <div>
                 <span className="study-eyebrow">
-                  <Sparkles size={13}/> YOUR PERSONAL LEARNING OS
+                  <Sparkles size={13}/> PERSONAL STUDY TRACKER
                 </span>
-
-                <h1>Make progress.<br/><em>Every single day.</em></h1>
-                <p>Your learning journey, organized in one beautiful space.</p>
+                <h1><em>SACHIN</em><br/>CHAUDHARY</h1>
 
                 <div className="hero-actions">
                   <button className="study-primary" onClick={() => {
@@ -848,7 +846,7 @@ export default function Home() {
               </label>
 
               <label className="study-field">
-                <span>CHAPTER LIST · ONE CHAPTER PER LINE</span>
+                <span>CHAPTER LIST Â· ONE CHAPTER PER LINE</span>
                 <textarea
                   rows={6}
                   value={chapterText}
@@ -886,7 +884,7 @@ export default function Home() {
                 disabled={!subjectTitle.trim() || preview.length === 0}
                 onClick={addSubject}
               >
-                <Plus/> CREATE SUBJECT · {preview.length} CHAPTERS
+                <Plus/> CREATE SUBJECT Â· {preview.length} CHAPTERS
               </button>
             </section>
 
@@ -1017,7 +1015,7 @@ export default function Home() {
           </>}
 
           <footer className="study-footer">
-            MY STUDY PLANNER <span>•</span> LEARN. TRACK. COMPLETE.
+            MY STUDY PLANNER <span>â€¢</span> LEARN. TRACK. COMPLETE.
           </footer>
         </div>
       </section>
@@ -1075,7 +1073,7 @@ function SubjectCard({ subject, open, remove }: {
         <i style={{ width: `${percent}%` }}/>
       </div>
 
-      <p>{done} completed · {total - done} remaining</p>
+      <p>{done} completed Â· {total - done} remaining</p>
     </div>
   );
 }
@@ -1154,6 +1152,7 @@ function EmptyStudy() {
     </div>
   );
 }
+
 
 
 
