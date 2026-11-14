@@ -624,7 +624,7 @@ export default function Home() {
             }}>
               {syncStatus === "loading" ? "CONNECTING..." :
                syncStatus === "saving" ? "SAVING..." :
-               syncStatus === "synced" ? "â˜ CLOUD SYNCED" :
+               syncStatus === "synced" ? "\u2601 CLOUD SYNCED" :
                "SYNC ERROR"}
             </span>
           </div>
@@ -1152,6 +1152,7 @@ function EmptyStudy() {
     </div>
   );
 }
+
 
 
 
